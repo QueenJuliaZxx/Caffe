@@ -1,16 +1,16 @@
 #!/usr/bin/env sh
-# This script converts the mnist data into lmdb/leveldb format,
-# depending on the value assigned to $BACKEND.
+# 这个脚本将mnist数据转换为lmdb/leveldb 格式,
+#格式具体是lmdb/leveldb取决于设置$BACKEND.
 set -e
 
 EXAMPLE=examples/mnist
 DATA=data/mnist
 BUILD=build/examples/mnist
-
+#格式具体是lmdb/leveldb取决于设置$BACKEND
 BACKEND="lmdb"
 
 echo "Creating ${BACKEND}..."
-
+#如果已经存在则删除
 rm -rf $EXAMPLE/mnist_train_${BACKEND}
 rm -rf $EXAMPLE/mnist_test_${BACKEND}
 
